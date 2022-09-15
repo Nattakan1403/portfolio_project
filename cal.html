@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: #fae378;
+            margin: 0;
+        }
+        .cal{
+            text-align: center;
+            background-color: darkslategrey;
+            width: 230px;
+            margin: 12% auto;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            margin: 2px 2px;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: #d1d1cf;
+        }
+        #re{
+            width: 107px;
+        }
+        #result {
+            font-size: 30px;
+            width: 220px;
+            height: 50px;
+            color: darkslategray;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="cal">
+        <div>
+            <input type="text" id="result" value="0" readonly >
+        </div>
+        <div class="row1">
+            <button onclick="x(10)">C</button>
+            <button onclick="x(11)">+/-</button>
+            <button onclick="x(12)">%</button>
+            <button onclick="x(13)">/</button>
+        </div>
+        <div class="row2">
+            <button onclick="x(7)">7</button>
+            <button onclick="x(8)">8</button>
+            <button onclick="x(9)">9</button>
+            <button onclick="x(14)">x</button>
+        </div>
+        <div class="row3">
+            <button onclick="x(4)">4</button>
+            <button onclick="x(5)">5</button>
+            <button onclick="x(6)">6</button>
+            <button onclick="x(15)">-</button>
+        </div>
+        <div class="row4">
+            <button onclick="x(1)">1</button>
+            <button onclick="x(2)">2</button>
+            <button onclick="x(3)">3</button>
+            <button onclick="x(16)">+</button>
+        </div>
+        <div class="row5">
+            <button onclick="x(0)">0</button>
+            <button onclick="x(17)">.</button>
+            <button onclick="x(18)" id="re">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    var dot = 0
+    var n = 0
+    var n2 = 0
+    var c1 = "";
+    var c2 = "";
+    var add = 0
+    var sub = 0
+    var mul = 0
+    var divi = 0
+    function x(a) {
+        if ( a<19){
+            /* กรณีกด 0 ตัวแรก */
+            if (a==0 && n==0){
+                document.getElementById("result").value = n
+                console.log("1",a)
+            }
+            /* กรณีกดตัวเลข */
+            else if (a <= 9 || a>=13){
+                /* ตัวตั้ง */
+                if (a <= 9 && n2 == 0){
+                    c1 = c1+a
+                    console.log("c1",c1)
+                    document.getElementById("result").value = c1                    
+                    n++
+                }
+                /* ตัวที่สองที่จะนำไปคำนวณ */
+                if (a <= 9 && n2 ==1){
+                    c2 = c2+a
+                    console.log("ตัวบวก",c2)
+                    document.getElementById("result").value = c2
+                    n++
+                }
+                if (a == 17 && dot == 0 && n2 == 0){
+                    c1 = c1+"."
+                    document.getElementById("result").value = c1
+                    dot == 1
+                }
+                if (a == 17 && dot == 0 && n2 == 1){
+                    c2 = c2+"."
+                    document.getElementById("result").value = c2
+                    dot == 1
+                }
+                /* กรณีบวก */
+                if (a == 16){
+                    n2 = 1
+                    add = 1
+                }
+                if (a == 18 && n2 == 1 && add == 1){
+                    c1 = Number(c1)+Number(c2) 
+                    document.getElementById("result").value = c1
+                    c2 = ""
+                    add = 0
+                }
+                /* กรณีลบ */
+                if (a == 15){
+                    n2 = 1
+                    sub = 1
+                }
+                if (a == 18 && n2 ==1 && sub == 1){
+                    c1 = Number(c1)- Number(c2)
+                    document.getElementById("result").value = c1
+                    c2 = "" 
+                    sub = 0
+                }
+                /* กรณีคูณ */
+                if (a == 14){
+                    n2 = 1
+                    mul = 1
+                }
+                if (a == 18&& n2 ==1 && mul == 1){
+                    c1 = Number(c1)*Number(c2)
+                    document.getElementById("result").value = c1
+                    c2 = ""
+                    mul = 0
+                }
+                /* กรณีหาร */
+                if (a == 13){
+                    n2 = 1
+                    divi = 1
+                }
+                if (a == 18&& n2 ==1 && divi == 1){
+                    c1 = Number(c1)/Number(c2)
+                    document.getElementById("result").value = c1
+                    c2 = ""
+                    divi = 0
+                }
+            }
+            /* ปุ่ม % */
+            else if (a == 12 && n2 == 0){
+                c1 = c1/100
+                document.getElementById("result").value = c1
+            }
+            else if (a == 12 && n2 == 1){
+                c1 = c1/100
+                document.getElementById("result").value = c1
+            }
+            else if (a == 12 && n2 == 1){
+                c2 = c2/100
+                document.getElementById("result").value = c2
+            }
+            /* ปุ่ม -/+ */
+            else if (a==11){
+                c1 = c1*(-1)
+                document.getElementById("result").value = c1
+            }
+            /* ปุ่มล้างข้อมูล */
+            else if (a == 10){
+                n = 0
+                n2 = 0
+                c1 = ""
+                c2 = ""
+                dot = 0
+                document.getElementById("result").value = n
+            }
+            
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Nattakan</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" ></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!--icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+    <!-- menubar -->
+    <header>
+        <div>
+            <div class="container">
+                <h4 class="d-inline">PORTFOLIO</h4>
+                <ul class="nav float-right">
+                    <li class="nav-item">
+                        <button id="darkmode" class="nav-link ">
+                            <span class="d-block-light d-inline"><i id="icons1" class="fas fa-moon"></i></span>
+                            <span class="d-block-dark d-none"><i id="icons2" class="fas fa-sun"></i></span>
+                        </button>
+                    </li>
+                    <li class="nav-item d-inline d-lg-none">
+                        <div class="btn-group ml-2">
+                            <button class="dropdown-toggle nav-link" type="button" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item bg-white" href="index.html">HOME</a>
+                                <a class="dropdown-item bg-white" href="project.html">PROJECT</a>
+                                <a class="dropdown-item bg-white" href="Resume.html">RESUME</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav d-none d-lg-flex float-lg-right">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="project.html">PROJECT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Resume.html">RESUME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- content -->
+    <div>
+        <div class="container text-center">
+            <div class="mt-5 mb-5">
+                <h3>
+                    <img style="width:30px ; margin: 10px;" src="/image/icon2.jpg" alt="">
+                    <strong>My Project</strong>
+                    <img style="width:30px ; margin: 10px;" src="/image/icon2.jpg" alt="">
+                </h3>
+            </div>
+            <!-- card project -->
+            <div>
+                <div>
+                    <div class="card w-100 mt-4 mb-4" style="width: 18rem;" data-aos="fade-up" data-aos-duration="1000">
+                        <h5  class="card-header text-dark"><strong>Project1</strong></h5>
+                        <video src="/image/project1.mov" controls style="width:100% ;" ></video>
+                        <div class="card-body">
+                            <h5 class="card-title text-dark"><strong> Calculator</strong></h5>
+                            <p class="card-text text-dark">HTML5 | CSS3 | Javascript</p>
+                            <a href="https://github.com/Nattakan1403/portfolio-project/blob/main/cal.html" target="_blank" class="btn btn-primary text-white">code</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card w-100 mt-4 mb-4" style="width: 18rem;" data-aos="fade-up" data-aos-duration="1000">
+                        <h5 class="card-header text-dark"><strong>Project2</strong></h5>
+                        <video src="/image/project2.mov" controls style="width:100% ;"></video>
+                        <div class="card-body">
+                            <h5 class="card-title text-dark"><strong>Portfolio</strong></h5>
+                            <p class="card-text text-dark">HTML5 | CSS3 | Boostrap4 | Javascript | AOS </p>
+                            <a href="https://github.com/Nattakan1403/portfolio-project" target="_blank"  class="btn btn-primary text-white">code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contact -->
+        <div class="container text-center mt-4 mb-4">
+            <div>
+                <h4 id="contact" class="mb-3">
+                    <img src="/image/icon1.png" alt="" id="iconcontact">
+                    Contact
+                    <img src="/image/icon1.png" alt="" id="iconcontact">
+                </h4>
+                <a class="btn" data-toggle="collapse" href="#mail" role="button" aria-expanded="false" aria-controls="mail">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a> |
+                <a class="btn" href="https://github.com/Nattakan1403" role="button" target="_blank">
+                    <i class="fab fa-github-square"></i>
+                    GitHub
+                  </a> |
+                  <a class="btn" data-toggle="collapse" href="#line" role="button" aria-expanded="false" aria-controls="line">
+                    <i class="fab fa-line"></i>
+                    Line
+                  </a> 
+                <div class="collapse" id="mail">
+                    <div class="card card-body m-3">
+                        <p class="text-dark">Email: nattakan4514@gmail.com </p>
+                        <a class="btn btn-secondary mr-5 ml-5" href="mailto:nattakan4514@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+                <div class="collapse" id="line">
+                    <div class="card card-body m-3">
+                        <p class="text-dark">Line ID: dalonatt</p>
+                        <img src="/image/download.png" alt="" class="w-25 mx-auto border border-secondary">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="java.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
